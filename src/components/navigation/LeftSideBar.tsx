@@ -1,7 +1,10 @@
+import { useState } from "react";
 import { Link } from "react-router";
 
 export default function LeftSideBar() {
-	const loggedIn = false;
+	const [loggedIn, setLoggedIn] = useState(
+		localStorage.getItem("eorLoggedIn")
+	);
 
 	return (
 		<nav className="leftSideBar">
