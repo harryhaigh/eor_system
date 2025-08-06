@@ -1,10 +1,13 @@
-import { NavLink, Link } from "react-router";
+import { Link } from "react-router";
 
 export default function LeftSideBar() {
+	const loggedIn = false;
+
 	return (
-		<div>
-			<NavLink to="/">Home</NavLink>
-			<Link to="/AddEmployee">Add employee</Link>
-		</div>
+		<nav className="leftSideBar">
+			<Link to="/">Home</Link>
+			{!loggedIn ? <Link to="./Login">Login</Link> : null}
+			{loggedIn ? <Link to="/AddEmployee">Add employee</Link> : null}
+		</nav>
 	);
 }
